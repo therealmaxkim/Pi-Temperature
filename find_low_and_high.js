@@ -10,13 +10,13 @@ var filename = myArgs[1];
 var logText = fs.readFileSync(filename, "utf8");
 //console.log(logText)
 
-//split by the comma delimiter that we put in between each temperature reading
+//split by the newline delimiter between each temperature reading
 logText = logText.split("\n");
 //console.log(logText)
 
 
 
-//convert each temeprature reading into a JSON object
+//convert each temeprature reading string into a JSON object
 logText.forEach(function(part, index) {
     this[index] = JSON.parse(this[index]);
 }, logText);
